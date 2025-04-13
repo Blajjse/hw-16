@@ -1,59 +1,26 @@
 .bg-box {
-    width: 100vw;
-    height: 100vh;
-    background-color: green;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .bg-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: url('./img/lamp.png') repeat-x;
-    background-size: auto 60px;
-  }
-  
-  .bg-box::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: url('./img/grass.png'), repeat-x;
-    background-size: auto 100px;
-  }
-  
-  .bg-box .left {
-    position: absolute;
-    top: 60px;
-    bottom: 100px;
-    left: 0;
-    width: 50px;
-    background: url('./img/headxex.png') repeat-y;
-    background-size: 50px auto;
-  }
-  
-  .bg-box .right {
-    position: absolute;
-    top: 60px;
-    bottom: 100px;
-    right: 0;
-    width: 50px;
-    background: url('./img/magicball.png') repeat-y;
-    background-size: 50px auto;
-  }
-  
-  .bg-box .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 600px;
-    height: 400px;
-    background: url('./img/image.png') no-repeat center/cover;
-  }
-  
+  position: relative;
+  width: auto;
+  height: 970px;
+  background-color: green;
+}
+
+.bg-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./img/headxex.png'), url('./img/lamp.png'), url('./img/magicball.png');
+  background-repeat: repeat-y, repeat-x, repeat-y;
+  background-size: 50px auto, auto 60px, 50px auto;
+  background-position: 0 0, 0 0, 100% 0;
+}
+
+.bg-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./img/grass.png'), url('./img/image.png');
+  background-repeat: repeat-x, no-repeat;
+  background-size: auto 100px, 600px 400px;
+  background-position: 0 100%, 50% 50%;
+}
